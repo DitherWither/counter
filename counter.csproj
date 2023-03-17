@@ -1,0 +1,24 @@
+
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <RootNamespace>io.github.DitherWither.counter</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="gircore.Adw-1" Version="0.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Add blueprints here -->
+    <!-- The include should have a build/ prefix as the compiled blueprints are stored there -->
+    <!-- The name should be same as the original, just replacing .blp with .ui -->
+    <!-- There might be a way to automate this, but I'm not sure how -->
+    <EmbeddedResource Include="build/MainWindow.ui">
+      <LogicalName>MainWindow.ui</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
