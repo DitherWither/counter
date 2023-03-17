@@ -2,14 +2,72 @@ using Gtk 4.0;
 using Adw 1;
 
 ApplicationWindow main_window {
-  default-width: 600;
-  default-height: 300;
-  title: _("Hello, Blueprint!");
+  title: "Counter";
 
   [titlebar]
-  HeaderBar {}
+  HeaderBar {
+    // Make the headerbar transparent, so that the application looks like it doesn't have a headerbar
+    styles [
+      "flat"
+    ]
+  }
 
-  Label {
-    label: "Hello, Blueprint!";
+  Box {
+    orientation: vertical;
+    hexpand: true;
+    vexpand: true;
+    valign: center;
+    halign: center;
+
+    margin-top: 12;
+    margin-bottom: 12;
+
+    // Make this box wider using margin, so that the window doesn't look too small
+    margin-start: 64;
+    margin-end: 64;
+
+    Button _incrementButton{
+      label: "Increment";
+      styles [
+        "pill"
+      ]
+    }
+
+    Label _counterLabel {
+      label: "0";
+
+      margin-top: 12;
+      margin-bottom: 12;
+      margin-start: 12;
+      margin-end: 12;
+
+      styles [
+        "title-1" // Make the label bigger and bold
+      ]
+    }
+
+    Button _decrementButton{
+      label: "Decrement";
+
+      styles [
+        "pill"
+      ]
+    }
+
+    Button _resetButton {
+      label: "Reset";
+
+      // Add a large margin to the top of the button, so that it looks visually separated from the other buttons
+      margin-top: 32;
+      
+      margin-bottom: 12;
+      margin-start: 12;
+      margin-end: 12;
+
+      styles [
+        "pill",
+        "destructive-action" // Make the button red
+      ]
+    }
   }
 }
