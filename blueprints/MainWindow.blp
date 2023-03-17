@@ -1,0 +1,15 @@
+using Gtk 4.0;
+using Adw 1;
+
+ApplicationWindow main_window {
+  default-width: 600;
+  default-height: 300;
+  title: _("Hello, Blueprint!");
+
+  [titlebar]
+  HeaderBar {}
+
+  Label {
+    label: "Hello, Blueprint!";
+  }
+}
